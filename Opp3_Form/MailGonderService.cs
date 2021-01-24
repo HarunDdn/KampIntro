@@ -16,7 +16,7 @@ namespace Opp3_Form
         }
         private void SendEmail()
         {
-            string[] mailadresleri = { "harun.didin83@gmail.com"};
+            string[] mailadresleri = { "harun.didin83@gmail.com"};//mail göndermek istediğiniz adresler
 
             
             string str="Test";
@@ -29,11 +29,11 @@ namespace Opp3_Form
                 {
 
                     MailMessage mail = new MailMessage();
-                    SmtpClient SmtpServer = new SmtpClient("mail.debak.com.tr");
+                    SmtpClient SmtpServer = new SmtpClient("*****.com");//maili gönderecek olan server port
 
-                    mail.From = new MailAddress("admin1@debak.com.tr");
+                    mail.From = new MailAddress("****@****.com**");//maili gönderecek olan kişi
                     mail.To.Add(mailadresleri[i]);
-                    mail.Subject = "TEST AMAÇLI GONDERDIM";
+                    mail.Subject = "TEST AMAÇLI GONDERDIM";//mail konusu
 
                     mail.IsBodyHtml = true;
                     string htmlBody;
@@ -44,7 +44,7 @@ namespace Opp3_Form
 
                     SmtpServer.Port = 587;
                     SmtpServer.UseDefaultCredentials = false;
-                    SmtpServer.Credentials = new System.Net.NetworkCredential("admin1@debak.com.tr", "Adm2020");
+                    SmtpServer.Credentials = new System.Net.NetworkCredential("*****@****.com", "*****");//göndericinin kullanıcı adı, parolası
                     SmtpServer.EnableSsl = false;
 
                     SmtpServer.Send(mail);
