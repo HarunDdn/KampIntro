@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms;
+
+namespace Opp3_Form
+{
+    class KonutKrediManager : IKrediManager
+    {
+        
+
+       
+
+        public void Hesapla(double anapara)
+        {
+            Application.OpenForms["Form1"].Controls["txt_konutsonuc"].Text = (anapara * 0.08).ToString();
+        }
+    }
+}
